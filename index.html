@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eine Überraschung für Jenny</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #fff4e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+.box {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 85%;
+  text-align: center;
+  box-shadow: 0 5px 25px rgba(0,0,0,.12);
+}
+h1, h2 { color: #444; }
+input, button {
+  width: 90%;
+  padding: 12px;
+  margin: 7px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+button {
+  background: #f4a261;
+  color: white;
+  border: 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+.msg {
+  display: none;
+  line-height: 1.7;
+}
+.error {
+  color: #c0392b;
+  min-height: 20px;
+}
+</style>
+</head>
+
+<body>
+<div class="box">
+
+  <div id="login">
+    <h2>🔐 Eine Überraschung für dich</h2>
+    <p>Bitte gib Benutzername und Passwort ein.</p>
+
+    <input id="username" type="text" placeholder="Benutzername" autocomplete="username">
+    <input id="password" type="password" placeholder="Passwort" autocomplete="current-password">
+
+    <button onclick="login()">Öffnen 💌</button>
+    <p id="error" class="error"></p>
+  </div>
+
+  <div id="message" class="msg">
+    <h2>🎣 Viel Spaß beim Angeln, liebe Jenny!</h2>
+
+    <p>
+      Auf dass du große Fische fängst, nicht wie dein Mann. 😅
+    </p>
+
+    <p>
+      Allerdings haben wir (Alice &amp; Lina) mit dir geplant,
+      ein schönes Wochenende in Amsterdam zu verbringen.
+    </p>
+
+    <p>
+      Erhol dich von deinem Schock.
+    </p>
+
+    <h3>Wir haben dich lieb. ❤️</h3>
+  </div>
+
+</div>
+
+<script>
+function login() {
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+  const error = document.getElementById("error");
+
+  if (username === "DiedeJenny" && password === "Angeln2026") {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("message").style.display = "block";
+  } else {
+    error.textContent = "Benutzername oder Passwort ist falsch.";
+  }
+}
+</script>
+
+</body>
+</html>
